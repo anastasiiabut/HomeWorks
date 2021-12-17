@@ -1,57 +1,38 @@
 package homeworks.part2;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.io.Serializable;
 
+
+@ToString
+@Setter
+@Getter
 public class Computer {
 
     private String brand;
     private double screenSize;
-    private int numberOfCores = 8;
-    private String type = "laptop";
+    private final int numberOfCores = 8;
+    private final String type = "laptop";
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public double getScreenSize() {
-        return screenSize;
-    }
-
-    public void setScreenSize(double screenSize) {
-        this.screenSize = screenSize;
-    }
-
-    public int getNumberOfCores() {
-        return numberOfCores;
-    }
-
-    public String getType() {
-        return type;
-    }
 
     public static void main(String[] args) {
 
         Computer firstComputer = new Computer();
-        firstComputer.setBrand("Omen");
-        firstComputer.setScreenSize(16.1);
+        firstComputer.brand = "Omen";
+        firstComputer.screenSize = 16.1;
 
-        System.out.println(firstComputer.getBrand());
-        System.out.println(firstComputer.getScreenSize());
-        System.out.println(firstComputer.getNumberOfCores());
-        System.out.println(firstComputer.getType());
+        System.out.println(firstComputer);
 
         Computer secondComputer = new Computer();
-        secondComputer.setBrand("Dell");
-        secondComputer.setScreenSize(14.9);
+        secondComputer.brand = "Dell";
+        secondComputer.screenSize = 16.1;
+        System.out.println(secondComputer);
 
-        System.out.println(secondComputer.getBrand());
-        System.out.println(secondComputer.getScreenSize());
-        System.out.println(secondComputer.getNumberOfCores());
-        System.out.println(secondComputer.getType());
+
 
     }
 }
